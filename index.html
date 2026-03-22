@@ -1,58 +1,110 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>BC Legacy Counseling</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #D3CAC0; /* light luxury background */
-      color: #27592D; /* emerald green text */
-    }
-    header {
-      background-color: #27592D;
-      color: white;
-      padding: 50px 20px;
-      text-align: center;
-    }
-    header h1 {
-      margin: 0;
-      font-size: 3em;
-    }
-    header p {
-      font-size: 1.2em;
-    }
-    main {
-      padding: 40px 20px;
-      text-align: center;
-    }
-    button {
-      background-color: #27592D;
-      color: white;
-      border: none;
-      padding: 15px 30px;
-      font-size: 1em;
-      cursor: pointer;
-      border-radius: 5px;
-      margin-top: 20px;
-    }
-    button:hover {
-      background-color: #1f4523;
-    }
-  </style>
-</head>
-<body>
-  <header>
-    <h1>BC Legacy Counseling</h1>
-    <p>Providing compassionate guidance for your mental and emotional wellness.</p>
-  </header>
-  <main>
-    <h2>Get Started Today</h2>
-    <p>Schedule your consultation and take the first step toward a healthier you.</p>
-    <button>Contact Us</button>
-  </main>
-</body>
-</html>
+import React from "react";
+
+export default function BCLegacySite() {
+  return (
+    <div className="font-sans text-gray-800 bg-white">
+      {/* NAVBAR */}
+      <nav className="flex justify-between items-center p-6 border-b border-gray-200 bg-white">
+        <h1 className="text-xl tracking-wide text-[#27592D] font-serif">BC LEGACY</h1>
+        <div className="space-x-6 text-sm text-gray-600 tracking-wide">
+          <a href="#about" className="hover:text-[#27592D]">About</a>
+          <a href="#services" className="hover:text-[#27592D]">Services</a>
+          <a href="#contact" className="hover:text-[#27592D]">Contact</a>
+        </div>
+      </nav>
+
+      {/* HERO */}
+      <section className="grid md:grid-cols-2 items-center py-24 px-6 max-w-6xl mx-auto gap-12 bg-gradient-to-b from-[#D3CAC0] to-white">
+        {/* LEFT TEXT */}
+        <div>
+          <h2 className="text-5xl font-serif mb-6 text-[#27592D] leading-tight">
+            BC Legacy Counselling
+          </h2>
+          <p className="uppercase tracking-[0.2em] text-sm text-gray-500 mb-6">
+            Counseling PLLC
+          </p>
+          <p className="mb-8 text-gray-600 max-w-md leading-relaxed">
+            A refined, supportive space where healing, growth, and clarity come
+            together. We help you navigate life with intention and strength.
+          </p>
+          <button className="bg-[#27592D] hover:bg-[#1f4724] text-white px-8 py-3 rounded-full shadow font-medium tracking-wide">
+            Book a Consultation
+          </button>
+        </div>
+
+        {/* RIGHT IMAGE */}
+        <div className="w-full h-[380px] rounded-[30px] overflow-hidden border border-gray-200 shadow-lg">
+          <img
+            src="/profile.jpg"
+            alt="Counselor portrait"
+            className="w-full h-full object-cover"
+          />
+        </div>
+      </section>
+
+      {/* ABOUT */}
+      <section id="about" className="py-20 px-6 max-w-4xl mx-auto text-center">
+        <h3 className="text-3xl font-serif mb-6 text-[#27592D]">About</h3>
+        <p className="text-gray-600 leading-relaxed">
+          At BC Legacy Counselling, we create a calm, elevated environment where
+          you feel understood and supported. Every session is thoughtfully
+          designed to help you build resilience, gain clarity, and move forward
+          with confidence.
+        </p>
+      </section>
+
+      {/* SERVICES */}
+      <section id="services" className="bg-[#f5f1ec] py-20 px-6">
+        <h3 className="text-3xl font-serif text-center mb-12 text-[#27592D]">
+          Services
+        </h3>
+        <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+          {["Individual Therapy", "Couples Counseling", "Anxiety & Stress Support"].map((service, i) => (
+            <div key={i} className="bg-white p-8 rounded-[25px] border border-gray-200 hover:border-[#27592D] transition shadow-sm">
+              <h4 className="font-medium mb-3 text-gray-800 tracking-wide">{service}</h4>
+              <p className="text-sm text-gray-600 leading-relaxed">
+                Thoughtful, personalized care designed to meet your unique
+                needs.
+              </p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* CONTACT */}
+      <section id="contact" className="py-20 px-6 text-center">
+        <h3 className="text-3xl font-serif mb-6 text-[#27592D]">
+          Get in Touch
+        </h3>
+        <p className="text-gray-600 mb-8">
+          Begin your journey toward clarity and growth.
+        </p>
+        <form className="max-w-md mx-auto space-y-4">
+          <input
+            type="text"
+            placeholder="Your Name"
+            className="w-full p-3 bg-white border border-gray-300 rounded-lg text-gray-800"
+          />
+          <input
+            type="email"
+            placeholder="Your Email"
+            className="w-full p-3 bg-white border border-gray-300 rounded-lg text-gray-800"
+          />
+          <textarea
+            placeholder="How can we help?"
+            className="w-full p-3 bg-white border border-gray-300 rounded-lg text-gray-800"
+            rows="4"
+          />
+          <button className="bg-[#27592D] hover:bg-[#1f4724] text-white px-8 py-3 rounded-full font-medium tracking-wide">
+            Send Message
+          </button>
+        </form>
+      </section>
+
+      {/* FOOTER */}
+      <footer className="bg-[#f4f4f4] border-t border-gray-200 text-center py-6 mt-10">
+        <p className="text-sm text-gray-500 tracking-wide">© {new Date().getFullYear()} BC Legacy Counselling PLLC</p>
+      </footer>
+    </div>
+  );
+}
