@@ -138,18 +138,167 @@ This is a space where you don’t have to carry everything alone—and where cla
   </footer>
 
   <!-- EMAIL SCRIPT -->
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BC Legacy Counseling</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="font-sans text-gray-800 bg-white">
+
+  <!-- NAVBAR -->
+  <nav class="flex justify-between items-center p-6 border-b border-gray-200 bg-white max-w-6xl mx-auto">
+    <img src="TLogo.jpg" alt="BC Legacy Logo" class="w-40 md:w-48 object-contain">
+    <div class="space-x-6 text-sm text-gray-600 tracking-wide">
+      <a href="#about" class="hover:text-[#27592D]">About</a>
+      <a href="#services" class="hover:text-[#27592D]">Services</a>
+      <a href="#contact" class="hover:text-[#27592D]">Contact</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="grid md:grid-cols-2 items-center py-24 px-6 max-w-6xl mx-auto gap-12 bg-gradient-to-b from-[#D3CAC0] to-white">
+    
+    <div>
+      <img src="logo.png" alt="BC Legacy Logo" class="w-64 md:w-80 object-contain mb-6">
+
+      <p class="mb-8 text-gray-600 max-w-md leading-relaxed">
+        BC Legacy Counseling is committed to providing a refined and supportive therapeutic experience for those navigating anxiety, depression, life transitions, parenting challenges, and the invisible load. We create a space rooted in trust and validation—helping you gain clarity, strengthen your voice, and move forward with intention.
+      </p>
+
+      <a href="https://calendly.com/bclegacycounseling" target="_blank"
+         class="bg-[#27592D] hover:bg-[#1f4724] text-white px-8 py-3 rounded-full shadow font-medium tracking-wide inline-block">
+         Book Complimentary 15 Min Consultation
+      </a>
+    </div>
+
+    <div class="w-full h-[380px] md:h-[500px] rounded-[30px] overflow-hidden border border-gray-200 shadow-lg">
+      <img src="profile.jpg" alt="Counselor portrait" class="w-full h-full object-cover">
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="py-20 px-6 max-w-4xl mx-auto text-center">
+    <h3 class="text-3xl font-serif mb-6 text-[#27592D]">About</h3>
+    <p class="text-gray-600 leading-relaxed">
+I am a Licensed Clinical Social Worker serving the state of Texas. Known for creating a calm, compassionate, and grounded therapeutic space where clients feel safe to be seen, heard, and understood.
+My work focuses on supporting those navigating anxiety, depression, life transitions, parenting challenges along with serving veterans and individuals seeking clarity during pivotal moments in their lives.
+I believe therapy should feel both supportive and intentional. In our work together, I provide a validating environment while helping you gain insight, strengthen your voice, and move forward with purpose.
+This is a space where you don’t have to carry everything alone—and where clarity becomes possible. 
+    </p>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services" class="bg-[#f5f1ec] py-20 px-6">
+    <h3 class="text-3xl font-serif text-center mb-12 text-[#27592D]">Services</h3>
+
+    <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+      
+      <div class="bg-white p-10 rounded-[25px] border border-gray-200 hover:border-[#27592D] transition shadow-sm text-center">
+        <h4 class="text-lg font-medium mb-3 text-gray-800">Individual Sessions</h4>
+        <p class="text-sm text-gray-600">
+          Individual therapy at BC Legacy Counseling is a personalized, one-on-one experince designed to help you process, heal, and move forward with clarity and intention. You've spent so much time showing up for others. This is where you get to show up for yourself.
+        </p>
+      </div>
+
+      <div class="bg-white p-10 rounded-[25px] border border-gray-200 hover:border-[#27592D] transition shadow-sm text-center">
+        <h4 class="text-lg font-medium mb-3 text-gray-800">Group Sessions</h4>
+        <p class="text-sm text-gray-600">
+          BC Legacy group therapy is a refined healing experience designed for women who hold it all togehter for everyone else, offering a safe, supportive environment to unpack, reconnect, and restore themselvees without judgment. 
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- INSURANCE -->
+  <section class="py-16 px-6 bg-white text-center">
+    <h3 class="text-2xl font-serif mb-6 text-[#27592D]">Insurance Accepted</h3>
+    <p class="text-gray-600 max-w-2xl mx-auto leading-relaxed">
+      We currently accept the following insurance plans to make care more accessible:
+    </p>
+
+    <div class="mt-8 flex flex-wrap justify-center gap-4 text-sm text-gray-700">
+      <span class="px-4 py-2 border border-gray-300 rounded-full">Cigna</span>
+      <span class="px-4 py-2 border border-gray-300 rounded-full">Aetna</span>
+      <span class="px-4 py-2 border border-gray-300 rounded-full">United Healthcare</span>
+      <span class="px-4 py-2 border border-gray-300 rounded-full">Blue Cross Blue Shield</span>
+      <span class="px-4 py-2 border border-gray-300 rounded-full">Evernorth Behavioral Health</span>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="py-20 px-6 text-center">
+    <h3 class="text-3xl font-serif mb-6 text-[#27592D]">Get in Touch</h3>
+    <p class="text-gray-600 mb-8">
+      Begin your journey toward clarity and growth.
+    </p>
+
+    <form onsubmit="sendEmail(event)" class="max-w-md mx-auto space-y-4">
+
+      <input id="name" type="text" placeholder="Your Name"
+        class="w-full p-3 border border-gray-300 rounded-lg">
+
+      <input id="email" type="email" placeholder="Your Email"
+        class="w-full p-3 border border-gray-300 rounded-lg">
+
+      <textarea id="message" placeholder="How can we help?"
+        class="w-full p-3 border border-gray-300 rounded-lg" rows="4"></textarea>
+
+      <button type="submit"
+        class="bg-[#27592D] hover:bg-[#1f4724] text-white px-8 py-3 rounded-full font-medium tracking-wide w-full">
+        Send Message
+      </button>
+
+    </form>
+  </section>
+
+  <!-- INSTAGRAM -->
+  <section class="py-20 px-6 bg-[#f5f1ec] text-center">
+    <h3 class="text-3xl font-serif mb-6 text-[#27592D]">Follow Us on Instagram</h3>
+    <p class="text-gray-600 mb-8">
+      Stay connected for insights, encouragement, and updates from BC Legacy Counseling.
+    </p>
+
+    <div class="max-w-3xl mx-auto bg-white p-8 rounded-[25px] shadow border border-gray-200">
+      <p class="text-lg text-gray-800 mb-4">@bclegacycounseling</p>
+
+      <a href="https://www.instagram.com/bclegacycounseling?igsh=dWNhbWtmdzExZzBu" target="_blank"
+        class="inline-block bg-[#27592D] hover:bg-[#1f4724] text-white px-8 py-3 rounded-full font-medium tracking-wide">
+        View Instagram Profile
+      </a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-[#f4f4f4] border-t border-gray-200 text-center py-6 mt-10">
+    <p class="text-sm text-gray-500">© 2026 BC Legacy Counseling PLLC</p>
+  </footer>
+
+ <!-- EMAILJS SCRIPT -->
   <script>
-    function sendEmail(e) {
+    const form = document.getElementById("contact-form");
+    const status = document.getElementById("form-status");
+
+    form.addEventListener("submit", function(e) {
       e.preventDefault();
 
-      const name = document.getElementById("name").value;
-      const email = document.getElementById("email").value;
-      const message = document.getElementById("message").value;
-
-      const mailtoLink = `mailto:bclegacycounseling@gmail.com?subject=New Inquiry from ${name}&body=Name: ${name}%0D%0AEmail: ${email}%0D%0A%0D%0AMessage: ${message}`;
-
-      window.location.href = mailtoLink;
-    }
+      emailjs.sendForm(
+        "bclegacycounseling",     // ✅ your service ID
+        "pWFgpoLThFOSssnGv",       // 🔥 REPLACE THIS
+        this
+      ).then(() => {
+        status.classList.remove("hidden");
+        status.innerText = "Message sent successfully.";
+        form.reset();
+      }, (error) => {
+        status.classList.remove("hidden");
+        status.innerText = "Something went wrong. Please try again.";
+        console.error(error);
+      });
+    });
   </script>
 
 </body>
