@@ -278,28 +278,34 @@ This is a space where you don’t have to carry everything alone—and where cla
   </footer>
 
  <!-- EMAILJS SCRIPT -->
-  <script>
+ <script>
+  document.addEventListener("DOMContentLoaded", function () {
+    
+    emailjs.init("YOUR_PUBLIC_KEY"); // keep your real key here
+
     const form = document.getElementById("contact-form");
     const status = document.getElementById("form-status");
 
-    form.addEventListener("submit", function(e) {
+    form.addEventListener("submit", function (e) {
       e.preventDefault();
 
+      status.classList.remove("hidden");
+      status.innerText = "Sending...";
+
       emailjs.sendForm(
-        "bclegacycounseling",     // ✅ your service ID
-        "pWFgpoLThFOSssnGv",       // 🔥 REPLACE THIS
-        this
-      ).then(() => {
-        status.classList.remove("hidden");
+        "bclegacycounseling",
+        "YOUR_TEMPLATE_ID",
+        form
+      )
+      .then(function () {
         status.innerText = "Message sent successfully.";
         form.reset();
-      }, (error) => {
-        status.classList.remove("hidden");
-        status.innerText = "Something went wrong. Please try again.";
-        console.error(error);
+      })
+      .catch(function (error) {
+        console.error("EmailJS Error:", error);
+        status.innerText = "Failed to send. Check console.";
       });
     });
-  </script>
 
-</body>
-</html>
+  });
+</script>
